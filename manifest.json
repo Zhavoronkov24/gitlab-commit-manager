@@ -1,0 +1,26 @@
+{
+    "manifest_version": 2,
+    "name": "GitLab Commit Manager",
+    "version": "1.0",
+    "description": "Расширение, помогающее отследить последний коммит сборки в истории коммитов GitLab и добавляющее дату сборки",
+    "permissions": [
+      "activeTab",
+      "storage"
+    ],
+    "icons": {
+      "16": "icons/icon.png",
+      "32": "icons/icon.png",
+      "48": "icons/icon.png"
+    },
+  
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+          }
+    ],
+    "browser_action": {
+      "default_popup": "popup.html"
+    }
+  }
+  
