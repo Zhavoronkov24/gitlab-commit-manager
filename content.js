@@ -1,12 +1,12 @@
-chrome.storage.sync.get(["commitName", "lineDate"], function(result) {
-    var commitName = result.commitName;
+chrome.storage.sync.get(["commitSHA", "lineDate"], function(result) {
+    var commitSHA = result.commitSHA;
     var lineDate = result.lineDate;
     
-    if (commitName && lineDate) {
-      var commits = document.querySelectorAll(".item-title");
+    if (commitSHA && lineDate) {
+      var commits = document.querySelectorAll(".commit-sha-group .label");
       
       for (var i = 0; i < commits.length; i++) {
-        if (commits[i].textContent.trim() === commitName) {
+        if (commits[i].textContent.trim() === commitSHA) {
           var commitElement = commits[i].closest(".commit");
           var line = document.createElement("div");
           line.style.color = "white";
